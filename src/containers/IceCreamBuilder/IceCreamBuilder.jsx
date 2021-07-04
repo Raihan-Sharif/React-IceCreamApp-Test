@@ -5,19 +5,26 @@ import classes from './IceCreamBuilder.module.css';
 
 export default class IceCreamBuilder extends Component {
     state = {
-        items: {},
+        items: {
+            vanilla: 64,
+            strawberry: 70,
+            chocolate: 60,
+            orange: 50,
+            lemon: 45,
+        },
         scoops: [],
         totalPrice: 0,
     };
 
     componentDidMount() {
-        fetch('https://react-course-27447.firebaseio.com/items.json')
+        /* fetch('https://react-course-27447.firebaseio.com/items.json')
             .then((response) => response.json())
             .then((responeData) => {
                 this.setState({
                     items: responeData,
                 });
             });
+            */
     }
 
     addScoop = (scoop) => {
